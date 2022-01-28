@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_graph"
+    app:startDestination="@id/firstFragment2">
+
+    <fragment
+        android:id="@+id/firstFragment2"
+        android:name="com.fatih.sanatkitabm.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment2_to_secondFragment2"
+            app:destination="@id/secondFragment2"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment2"
+        android:name="com.fatih.sanatkitabm.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" >
+        <action
+            android:id="@+id/action_secondFragment2_to_firstFragment2"
+            app:destination="@id/firstFragment2"
+            app:enterAnim="@anim/nav_default_exit_anim"
+            app:exitAnim="@anim/nav_default_enter_anim" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="info"
+            app:argType="string" />
+    </fragment>
+</navigation>
